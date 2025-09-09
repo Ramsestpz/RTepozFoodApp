@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -30,6 +32,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -108,40 +111,87 @@ fun HomeScreen(innerPadding: PaddingValues) {
                 CategoryCard(category = category)
             }
         }
+
+        Text(
+            text = "Busca los mejores restaurantes",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier
+                .padding(start = 15.dp, top = 10.dp, bottom = 5.dp)
+        )
+
+        LazyRow(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            items(restaurants) { restaurant ->
+                RestaurantCard(restaurant = restaurant)
+            }
+        }
     }
 }
 
 @Composable
 fun CategoryCard(category: Category) {
     Column(
-        modifier = Modifier
-            .width(100.dp)
-            .padding(8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(start = 10.dp)
     ) {
-        Surface(
-            modifier = Modifier.size(80.dp),
-            shape = CircleShape,
-            color = Color(0xFFE53935), // color de fondo del círculo (rojo en tu ejemplo)
-            shadowElevation = 4.dp
+        Box(
+            modifier = Modifier
+                .size(80.dp)
+                .clip(CircleShape)
+                .background(Color.LightGray), // espacio reservado
+            contentAlignment = Alignment.Center
         ) {
             Image(
                 painter = painterResource(id = category.drawableRes),
                 contentDescription = category.name,
                 modifier = Modifier
-                    .padding(12.dp) // para que no pegue con el borde
-                    .fillMaxSize(),
-                contentScale = ContentScale.Fit
+                    .size(50.dp),
+                contentScale = ContentScale.Crop
             )
         }
         Text(
             text = category.name,
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Medium,
-            modifier = Modifier.padding(top = 4.dp)
+            modifier = Modifier.padding(top = 5.dp),
+            fontSize = 14.sp
         )
     }
 }
+
+@Composable
+fun RestaurantCard(restaurant: Restaurant) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(start = 10.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(80.dp)
+                .clip(CircleShape)
+                .background(Color.LightGray),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                painter = painterResource(id = restaurant.drawableRes),
+                contentDescription = restaurant.name,
+                modifier = Modifier
+                    .fillMaxSize(),
+                contentScale = ContentScale.Crop
+            )
+        }
+        Text(
+            text = restaurant.name,
+            modifier = Modifier.padding(top = 5.dp),
+            fontSize = 14.sp,
+            fontWeight = FontWeight.Bold
+        )
+    }
+}
+
 
 
 

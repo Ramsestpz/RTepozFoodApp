@@ -1,5 +1,5 @@
 package com.tepoz.foodapp
-
+import com.tepoz.foodapp.R
 data class Category(
     val id: Int,
     val name: String,
