@@ -34,7 +34,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -99,7 +98,7 @@ fun HomeScreen(innerPadding: PaddingValues) {
             fontSize = 20.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
-                .padding(start = 15.dp, top = 10.dp, bottom = 5.dp)
+                .padding(start = 15.dp, top = 5.dp, bottom = 5.dp)
         )
         LazyRow(
             modifier = Modifier
@@ -142,7 +141,7 @@ fun HomeScreen(innerPadding: PaddingValues) {
             verticalArrangement = Arrangement.spacedBy(16.dp),
             horizontalArrangement = Arrangement.spacedBy(16.dp),
             modifier = Modifier
-                .height(500.dp) // altura fija para que no choque con el scroll
+                .height(500.dp)
                 .padding(10.dp)
         ) {
             items(foods) { food ->
@@ -162,7 +161,7 @@ fun CategoryCard(category: Category) {
             modifier = Modifier
                 .size(90.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray), // espacio reservado
+                .background(Color.LightGray),
             contentAlignment = Alignment.Center
         ) {
             Image(
@@ -198,8 +197,7 @@ fun RestaurantCard(restaurant: Restaurant) {
                 painter = painterResource(id = restaurant.drawableRes),
                 contentDescription = restaurant.name,
                 modifier = Modifier
-                    .fillMaxSize(),
-                
+                    .fillMaxSize()
             )
         }
         Text(
@@ -229,8 +227,7 @@ fun FoodCard(food: Food) {
                 painter = painterResource(id = food.drawableRes),
                 contentDescription = food.name,
                 modifier = Modifier
-                    .fillMaxSize(),
-
+                    .fillMaxSize()
             )
             Text(
                 text = food.price,
