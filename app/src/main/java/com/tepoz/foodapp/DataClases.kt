@@ -22,24 +22,24 @@ data class Food(
 
 val categories = listOf(
     Category(1, "Pizza", R.drawable.pizza),
-    Category(2, "Burger", R.drawable.fast_food),
-    Category(3, "Hot Dog", R.drawable.japanese),
-    Category(4, "Drink", R.drawable.mexican),
-    Category(5, "Donut", R.drawable.fast_food)
+    Category(2, "Burger", R.drawable.burger),
+    Category(3, "Hot Dog", R.drawable.dog),
+    Category(4, "Drink", R.drawable.drink),
+    Category(5, "Donut", R.drawable.donut)
 )
 
 val restaurants = listOf(
-    Restaurant(1, "Restaurante 1", R.drawable.italian),
-    Restaurant(2, "Restaurante 2", R.drawable.italian),
-    Restaurant(3, "Restaurante 3", R.drawable.italian),
-    Restaurant(4, "Restaurante 4", R.drawable.italian)
+    Restaurant(1, "Krispy Cream", R.drawable.cream),
+    Restaurant(2, "Burger King", R.drawable.king),
+    Restaurant(3, "McDonald's", R.drawable.mcdonalds),
+    Restaurant(4, "Taco Bell", R.drawable.taco)
 )
 
 val foods = listOf(
-    Food(1, "Pizza Pepperoni", R.drawable.japanese, 4.5, "$12.99"),
-    Food(2, "Burger Clásica", R.drawable.japanese, 4.0, "$9.99"),
-    Food(3, "Hot Dog Especial", R.drawable.japanese, 4.2, "$7.99"),
-    Food(4, "Sushi Variado", R.drawable.japanese, 4.8, "$15.99"),
-    Food(5, "Taco Mexicano", R.drawable.japanese, 4.3, "$8.99"),
-    Food(6, "Donut Glaseado", R.drawable.japanese, 4.1, "$3.99")
+    Food(1, "Pizza Pepperoni", R.drawable.peperoni, 4.5, "$12.99"),
+    Food(2, "Burger Clásica", R.drawable.burger, 4.0, "$9.99"),
+    Food(3, "Hot Dog Especial", R.drawable.dog, 4.2, "$7.99"),
+    Food(4, "Sushi Variado", R.drawable.shi, 4.8, "$15.99"),
+    Food(5, "Taco Mexicano", R.drawable.tacosss, 4.3, "$8.99"),
+    Food(6, "Donut Glaseado", R.drawable.dona, 4.1, "$3.99")
 )

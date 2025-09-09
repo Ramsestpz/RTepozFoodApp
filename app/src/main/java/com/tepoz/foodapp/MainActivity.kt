@@ -160,7 +160,7 @@ fun CategoryCard(category: Category) {
     ) {
         Box(
             modifier = Modifier
-                .size(80.dp)
+                .size(90.dp)
                 .clip(CircleShape)
                 .background(Color.LightGray), // espacio reservado
             contentAlignment = Alignment.Center
@@ -170,7 +170,7 @@ fun CategoryCard(category: Category) {
                 contentDescription = category.name,
                 modifier = Modifier
                     .size(50.dp),
-                contentScale = ContentScale.Crop
+
             )
         }
         Text(
@@ -189,7 +189,7 @@ fun RestaurantCard(restaurant: Restaurant) {
     ) {
         Box(
             modifier = Modifier
-                .size(80.dp)
+                .size(90.dp)
                 .clip(CircleShape)
                 .background(Color.LightGray),
             contentAlignment = Alignment.Center
@@ -199,7 +199,7 @@ fun RestaurantCard(restaurant: Restaurant) {
                 contentDescription = restaurant.name,
                 modifier = Modifier
                     .fillMaxSize(),
-                contentScale = ContentScale.Crop
+                
             )
         }
         Text(
@@ -222,8 +222,7 @@ fun FoodCard(food: Food) {
             modifier = Modifier
                 .height(150.dp)
                 .fillMaxWidth()
-                .clip(RoundedCornerShape(16.dp))
-                .background(Color.LightGray),
+                .clip(RoundedCornerShape(16.dp)),
             contentAlignment = Alignment.Center
         ) {
             Image(
@@ -231,7 +230,7 @@ fun FoodCard(food: Food) {
                 contentDescription = food.name,
                 modifier = Modifier
                     .fillMaxSize(),
-                contentScale = ContentScale.Crop
+
             )
             Text(
                 text = food.price,
