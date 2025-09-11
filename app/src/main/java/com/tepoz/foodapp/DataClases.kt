@@ -32,7 +32,8 @@ val restaurants = listOf(
     Restaurant(1, "Krispy Cream", R.drawable.cream),
     Restaurant(2, "Burger King", R.drawable.king),
     Restaurant(3, "McDonald's", R.drawable.mcdonalds),
-    Restaurant(4, "Taco Bell", R.drawable.taco)
+    Restaurant(4, "Taco Bell", R.drawable.taco),
+    Restaurant(5, "Subway", R.drawable.subway)
 )
 
 val foods = listOf(

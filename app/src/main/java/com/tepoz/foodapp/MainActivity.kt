@@ -40,6 +40,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tepoz.foodapp.ui.theme.FoodAppTheme
+import com.tepoz.foodapp.ui.theme.Lol
+import com.tepoz.foodapp.ui.theme.bla
+import com.tepoz.foodapp.ui.theme.wa
+import com.tepoz.foodapp.ui.theme.xd
 
 
 class MainActivity : ComponentActivity() {
@@ -69,7 +73,8 @@ fun HomeScreen(innerPadding: PaddingValues) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(15.dp)
+                .padding(15.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
                 imageVector = Icons.Default.AccountCircle,
@@ -161,7 +166,7 @@ fun CategoryCard(category: Category) {
             modifier = Modifier
                 .size(90.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray),
+                .background(xd),
             contentAlignment = Alignment.Center
         ) {
             Image(
@@ -190,7 +195,7 @@ fun RestaurantCard(restaurant: Restaurant) {
             modifier = Modifier
                 .size(90.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray),
+                .background(xd),
             contentAlignment = Alignment.Center
         ) {
             Image(
@@ -231,13 +236,13 @@ fun FoodCard(food: Food) {
             )
             Text(
                 text = food.price,
-                color = Color.White,
+                color = wa,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .align(Alignment.BottomEnd)
                     .padding(8.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Color(0xB4000000))
+                    .background(bla)
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             )
         }
@@ -248,7 +253,7 @@ fun FoodCard(food: Food) {
             Icon(
                 imageVector = Icons.Default.Star,
                 contentDescription = "Rating",
-                tint = Color(0xFF4CAF50),
+                tint = Lol,
                 modifier = Modifier.size(16.dp)
             )
             Text(
